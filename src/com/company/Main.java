@@ -6,4 +6,5 @@ public class Main {
 	// cookbook project
     }
     int x = 0;
+    int y = 0;
 }
