@@ -7,10 +7,10 @@ public class Recipe {
 
     private String name;
     private String [] ingredients;
-    private String description;
-    private double cookingTime;
+    public String description;
+    private int cookingTime;
 
-    public Recipe(String name, String[] ingredients, String description, double cookingTime) {
+    public Recipe(String name, String[] ingredients, String description, int cookingTime) {
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
@@ -45,31 +45,45 @@ public class Recipe {
         return cookingTime;
     }
 
-    public void setCookingTime(double cookingTime) {
+    public void setCookingTime(int cookingTime) {
         this.cookingTime = cookingTime;
     }
 
-    public  void addRecipe2(){
-        System.out.println("Please enter the name of recipe");
+    public static void recipeInput(){
+
         Scanner input = new Scanner(System.in);
-        this.name = input.nextLine();
-
-        System.out.println("Please enter how many ingredients You have");
-       // Scanner input = new Scanner(System.in);
-        int elements = input.nextInt();
-        int ingredients [] = new int[elements];
-        for (int i = 0; i < elements; i++) {
-            ingredients [i]= input.nextInt();
-        }
-        for (int i: ingredients) {
-            System.out.println(i);
-        }
+        System.out.println("Please enter recipe name");
+        String answerName = input.nextLine();
 
 
+        System.out.println("Please enter how many ingredients do you have");
+        int numberOfIngredients = input.nextInt();
+        System.out.println("Please enter " + numberOfIngredients + " ingredients");
+        String array [] = new String [numberOfIngredients];
+        array[0] = input.nextLine();
+        for (int i = 0; i < array.length; i++) { //reading array
+            array[i] = input.nextLine();
         }
+        System.out.println("ingredients:  ");
+        for (String i : array){ // for printing array
+            System.out.print(i + ", ");    //WHILE !!!
+        }
+        System.out.println();
+        System.out.println("Please describe a cooking process: ");
+        String description = input.nextLine();
+
+        System.out.println("Please indicate cooking time (minutes): ");
+        int cookingTime = input.nextInt();
+    }
+
+    public static void printUserRecipe(){
+        System.out.println("Your recipe name:" );
 
 
     }
+
+
+}
 
 
 

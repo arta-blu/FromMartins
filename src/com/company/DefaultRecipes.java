@@ -1,8 +1,10 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class DefaultRecipes {
 
-    public static void defaultRecipe() {
+    public String defaultRecipe() {
 
         String name;
         String[] ingredients;
@@ -21,13 +23,13 @@ public class DefaultRecipes {
                 "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
                 "to serve";
         cookingTime = 10;
-
+/*
         name = "";
         ingredients = new String[]{};
         description = "";
         cookingTime = 1;
-
-
+*/
+        return name + Arrays.toString(ingredients) + description + cookingTime;
         //  Main.recipeBook.add(new Sweet(name, ingredients, description, cookingTime, category, calories));
 
     }

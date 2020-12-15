@@ -12,6 +12,13 @@ public class Main {
 //    private Recipe recipe = new Recipe("");
     public static void main(String[] args) {
 
+        //DefaultRecipes defaultRecipes = new DefaultRecipes("aaa", "aaa", "aa", 155);
+
+
+
+        //System.out.println(DefaultRecipes.defaultRecipe());
+        //System.out.println(DefaultRecipes.defaultRecipe());
+
 
 
         System.out.print("Hello! Welcome to COOK BOOK! Enjoy Your experience!");
@@ -56,27 +63,36 @@ public class Main {
         String answer = input.nextLine();
 
         if (answer.equalsIgnoreCase("sweet")){
-            System.out.println("Please enter dessert name");
-            String answerName = input.nextLine();
+            Recipe.recipeInput();
 
-            //To make an array for ingredients - has mistake in the code:
-            System.out.println("Please enter how many ingredients do you have");
-            int numberOfIngredients = input.nextInt();
-            int array [] = new int [numberOfIngredients];
-            for (int i = 0; i < numberOfIngredients ; i++) { //reading array
-                array[i] = input.nextInt();
+            System.out.println("Do you want to add calories? (1- yes, 0 - no)");
+            int answerCalories = input.nextInt();
+            if (answerCalories == 1) {
+                Sweet.addCalories();
+            } else if (answerCalories == 0) {
+                System.out.println("No calories added");
+            } else {
+                System.out.println("wrong answer");      // WHILE!!!!
             }
-            for (int i : array){ // for printing array
-                System.out.println("array " + i);
-            }
+            Recipe.printUserRecipe();
 
         }else if (answer.equalsIgnoreCase("healthy")){
+
+            Recipe.recipeInput();
+
+            Healthy.isRecipeVegan();
+
+
+
+
 
         }else {
             System.out.println("Please try again!");
         }
 
     }
+
+
 
     private static void instructions() {
 
