@@ -1,8 +1,14 @@
 package com.company;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+
+    public static Scanner input = new Scanner(System.in);
+    public static ArrayList<Recipe> recipeBook = new ArrayList<Recipe>();
+
 //    private Recipe recipe = new Recipe("");
     public static void main(String[] args) {
 
@@ -50,7 +56,19 @@ public class Main {
         String answer = input.nextLine();
 
         if (answer.equalsIgnoreCase("sweet")){
-            System.out.println();
+            System.out.println("Please enter dessert name");
+            String answerName = input.nextLine();
+
+            //To make an array for ingredients - has mistake in the code:
+            System.out.println("Please enter how many ingredients do you have");
+            int numberOfIngredients = input.nextInt();
+            int array [] = new int [numberOfIngredients];
+            for (int i = 0; i < numberOfIngredients ; i++) { //reading array
+                array[i] = input.nextInt();
+            }
+            for (int i : array){ // for printing array
+                System.out.println("array " + i);
+            }
 
         }else if (answer.equalsIgnoreCase("healthy")){
 
