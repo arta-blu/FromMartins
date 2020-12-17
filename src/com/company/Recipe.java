@@ -95,11 +95,26 @@ public class Recipe {
         setCookingTime(cookingTime);
     }
 
+    /* Cooking Time:
+        System.out.println("Please indicate cooking time (minutes): ");
+        int cookingTime = input.nextInt();
+    int toHours = 0;
+    int remainingMinutes = 0;
+          if (cookingTime >= 60) {
+            toHours = cookingTime / 60;
+       remainingMinutes = cookingTime % 60;
+       System.out.println("Cooking time " + toHours + " h " + remainingMinutes + " and min.");
+       } else {
+        System.out.println("Cooking time " + cookingTime + " min.");
+    }
+} */
+
+
     public void printUserRecipe(){
-        System.out.println("Your recipe name:" + this.name);
-        System.out.println("Ingredients:" + Arrays.toString(this.ingredients));
-        System.out.println("Description:" + this.description);
-        System.out.println("Cooking time:" + this.cookingTime);
+        System.out.println("Your recipe name: " + this.name);
+        System.out.println("Ingredients: " + Arrays.toString(this.ingredients));
+        System.out.println("Description: " + this.description);
+        System.out.println("Cooking time: " + this.cookingTime);
     }
 
 
@@ -128,6 +143,23 @@ public class Recipe {
     //        System.out.println("recipe founded");
     //    } else System.out.println("not found");
     }
+
+
+    /*        System.out.println("Please indicate key word for search!");
+            String searchFor = input.nextLine();
+            if(searchFor.equalsIgnoreCase("couscous")){
+                System.out.println(DefaultRecipes.couscousSalad());
+            }
+            // if(DefaultRecipes.couscousSalad(ingredients1).contains(searchFor)){
+            // } <- little bit wrong
+            // Arrays.asList(array).contains(x); <- also another schematic option
+
+
+            if(searchFor.equalsIgnoreCase("chocolate")){
+                System.out.println(DefaultRecipes.chocolateChiaPudding());
+            }
+       } */
+
 
 
     public void changeRecipe() {
