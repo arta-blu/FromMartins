@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -7,12 +10,70 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Recipe recipe1 = new Recipe("Couscous salad", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions", "1 red pepper", "½ cucumber", "50 g fetta cheese", "2tbsp pesto", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
+        String str = "\u2606";
+
+        System.out.println(str);
+
+
+        Recipe recipe1 = new Recipe("Couscous", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions", "red pepper", "2tbsp pesto", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
                 "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
                 "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
                 "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
                 "to serve", 10);
 
+        Recipe recipe2 = new Recipe("salad", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions", "red pepper", "cucumber",  "2tbsp ", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
+                "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
+                "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
+                "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
+                "to serve", 110);
+
+        Recipe recipe3 = new Recipe("salad", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions", "red pepper", "cucumber", "50 g fetta cheese", "2tbsp ", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
+                "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
+                "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
+                "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
+                "to serve", 300);
+
+        Recipe recipe4 = new Recipe("salad", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions",  "cucumber", "50 g fetta cheese", "2tbsp pesto", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
+                "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
+                "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
+                "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
+                "to serve", 4445);
+
+        ArrayList<Recipe> allRecipe = new ArrayList<Recipe>();
+
+        allRecipe.add(recipe1);
+        allRecipe.add(recipe2);
+        allRecipe.add(recipe3);
+        allRecipe.add(recipe4);
+
+
+        /*
+        for (Recipe s : allRecipe) {
+            System.out.println("Recipe name: " + s.name + ".\n" +
+                    "Ingredients: " + Arrays.toString(s.ingredients) + ".\n"
+                    + "Instructions: " + s.description + ".\n" + "Cooking time: " + s.cookingTime + " min.");
+            System.out.println();
+        }
+        */
+
+        /*
+
+        System.out.println("please enter name you want to search:");
+        Scanner search = new Scanner(System.in);
+        String userInput = search.nextLine();
+        boolean isFound = false;
+        for (Recipe s : allRecipe) {
+            if (userInput.equalsIgnoreCase(s.name)) {
+                System.out.println("recipe founded");
+                s.printUserRecipe();
+                System.out.println();
+                isFound = true;
+            } else isFound = false;
+        }
+        if (!isFound) {
+            System.out.println(userInput + " not found");
+        }
+*/
         ///recipe1.printUserRecipe();
 
         Sweet sweetRecipe1 = new Sweet("Couscous salad", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions", "1 red pepper", "½ cucumber", "50 g fetta cheese", "2tbsp pesto", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
@@ -43,7 +104,7 @@ public class Main {
                     instructions();
                     break;
                 case 1:
-                    Recipe.searchForRecipe();
+                    Search.searchForRecipe(allRecipe);
                     break;
                 case 2:
                     addRecipe();

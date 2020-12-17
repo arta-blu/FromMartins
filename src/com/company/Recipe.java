@@ -5,10 +5,12 @@ import java.util.Scanner;
 
 public class Recipe {
 
-    private String name;
-    private String [] ingredients;
+    public String name;
+    public String [] ingredients;
     public String description;
-    private int cookingTime;
+    public int cookingTime;
+
+
 
     public Recipe(String name, String[] ingredients, String description, int cookingTime) {
         this.name = name;
@@ -95,27 +97,30 @@ public class Recipe {
         setCookingTime(cookingTime);
     }
 
-    /* Cooking Time:
-        System.out.println("Please indicate cooking time (minutes): ");
-        int cookingTime = input.nextInt();
-    int toHours = 0;
-    int remainingMinutes = 0;
-          if (cookingTime >= 60) {
-            toHours = cookingTime / 60;
-       remainingMinutes = cookingTime % 60;
-       System.out.println("Cooking time " + toHours + " h " + remainingMinutes + " and min.");
-       } else {
-        System.out.println("Cooking time " + cookingTime + " min.");
-    }
-} */
 
 
     public void printUserRecipe(){
         System.out.println("Your recipe name: " + this.name);
         System.out.println("Ingredients: " + Arrays.toString(this.ingredients));
         System.out.println("Description: " + this.description);
-        System.out.println("Cooking time: " + this.cookingTime);
+
+
+        int cookingTime = this.cookingTime;
+        int toHours = 0;
+        int remainingMinutes = 0;
+        if (cookingTime >= 60) {
+            toHours = cookingTime / 60;
+            remainingMinutes = cookingTime % 60;
+            System.out.println("Cooking time " + toHours + " h and " + remainingMinutes + " min.");
+        } else {
+            System.out.println("Cooking time " + cookingTime + " min.");
+        }
+        //System.out.println("Cooking time: " + this.cookingTime);
+
     }
+
+
+
 
 
     public static void  searchForRecipe() {
@@ -137,8 +142,10 @@ public class Recipe {
     }
 
     static void searchByName() {
-        Scanner input = new Scanner(System.in);
-        String userInput = input.nextLine();
+
+
+
+
    //     if (userInput.equalsIgnoreCase(this.name)) {
     //        System.out.println("recipe founded");
     //    } else System.out.println("not found");
