@@ -21,15 +21,20 @@ public class Healthy extends Recipe {
 
 
     public static void isRecipeVegan() {
-        System.out.println("Does your food contain meat, dairy, eggs, animal? (1 - yes, 0 - no)");
+        System.out.println("Does your food contains meat, poultry, fish, dairy, eggs or foods made by bees? (1 - yes, 0 - no)");
         Scanner input = new Scanner(System.in);
-        int answer = input.nextInt();
+        //int answer = input.nextInt();
+        int answer;
+        while(true) {
+            answer = input.nextInt();
+            if (answer != 1 && answer != 0) {
+                System.out.println("Does your food contains meat, poultry, fish, dairy, eggs or foods made by bees? (1 - yes, 0 - no)");
+            } else break;
+        }
         if (answer == 1) {
             System.out.println("Your recipe is not vegan");
-        } else if (answer == 0) {
-            System.out.println("Your recipe is  vegan");
         } else {
-            System.out.println("Wrong answer :("); // WHILE
+            System.out.println("Your recipe is  vegan");
         }
 
     }
