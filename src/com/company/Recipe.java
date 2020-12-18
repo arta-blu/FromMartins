@@ -97,13 +97,10 @@ public class Recipe {
         setCookingTime(cookingTime);
     }
 
-
-
     public void printUserRecipe(){
         System.out.println("Your recipe name: " + this.name);
         System.out.println("Ingredients: " + Arrays.toString(this.ingredients));
         System.out.println("Description: " + this.description);
-
 
         int cookingTime = this.cookingTime;
         int toHours = 0;
@@ -116,7 +113,6 @@ public class Recipe {
             System.out.println("Cooking time " + cookingTime + " min.");
         }
         //System.out.println("Cooking time: " + this.cookingTime);
-
     }
 
 
@@ -151,21 +147,6 @@ public class Recipe {
     //    } else System.out.println("not found");
     }
 
-
-    /*        System.out.println("Please indicate key word for search!");
-            String searchFor = input.nextLine();
-            if(searchFor.equalsIgnoreCase("couscous")){
-                System.out.println(DefaultRecipes.couscousSalad());
-            }
-            // if(DefaultRecipes.couscousSalad(ingredients1).contains(searchFor)){
-            // } <- little bit wrong
-            // Arrays.asList(array).contains(x); <- also another schematic option
-
-
-            if(searchFor.equalsIgnoreCase("chocolate")){
-                System.out.println(DefaultRecipes.chocolateChiaPudding());
-            }
-       } */
 
 
 

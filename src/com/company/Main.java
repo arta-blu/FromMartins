@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -123,7 +120,7 @@ public class Main {
                     addRecipe();
                     break;
                 case 3:
-                    //  voteForRecipe();
+                      VoteRecipe.voteForRecipe(allRecipe);
                     break;
                 case 4:
                  //   addToFavorites();
