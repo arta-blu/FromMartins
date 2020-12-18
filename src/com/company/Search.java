@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Search {
@@ -32,7 +33,7 @@ public class Search {
 
         for (Recipe s : allRecipe) {
             for (String ingredient : s.ingredients) {
-                if (ingredient.contains(userInput)) {
+                if (ingredient.contains(userInput.toLowerCase(Locale.ROOT))) {
                 //if ((Arrays.asList(ingredient)).contains(userInput)) {
                     System.out.println("recipe found");
                     s.printUserRecipe();
@@ -54,11 +55,11 @@ public class Search {
         boolean isFound = false;
         for (Recipe s : allRecipe) {
             if (userInput.equalsIgnoreCase(s.name)) {
-                System.out.println("recipe founded");
+                System.out.println("recipe found");
                 s.printUserRecipe();
                 System.out.println();
                 isFound = true;
-            } else isFound = false;
+            }
         }
         if (!isFound) {
             System.out.println(userInput + " not found");

@@ -8,7 +8,6 @@ public class Sweet extends Recipe {
     private int calories;
 
 
-
     public Sweet(String name, String[] ingredients, String description, int cookingTime, int calories) {
         super(name, ingredients, description, cookingTime);
         this.calories = calories;
@@ -26,7 +25,7 @@ public class Sweet extends Recipe {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter how many calories does your dessert have:");
         int caloriesCount;
-        while(true) {
+        while (true) {
             caloriesCount = input.nextInt();
             if (caloriesCount < 0) {
                 System.out.println("Calorie count can't be negative. Please enter how many calories does your dessert have: ");
