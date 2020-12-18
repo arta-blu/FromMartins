@@ -123,7 +123,7 @@ public class Main {
                       VoteRecipe.voteForRecipe(allRecipe);
                     break;
                 case 4:
-                 //   addToFavorites();
+                    AddFavorite.addToFavorite(allRecipe);
                     break;
                 case 5:
                     quit = true;
