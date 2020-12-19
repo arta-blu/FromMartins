@@ -16,7 +16,7 @@ public class VoteRecipe {
         int i = 0;
         for (Recipe s : allRecipe) {
             i++;
-            System.out.println( i+"."+ s.name); }
+            System.out.println( i+" - "+ s.name); }
 
 
         System.out.println("Please indicate for which recipe you would like to vote: ");
@@ -30,7 +30,7 @@ public class VoteRecipe {
               number++;
 
                 if ((clientChoice.equalsIgnoreCase(s.name))||(clientChoice.equals(Integer.toString(number)))) {
-                    System.out.println("You chose to vote for: " + number+ " "+ s.name);
+                    System.out.println("You chose to vote for: " + number + " "+ s.name);
                     isFound = true;
 
                     System.out.print("Please vote with: 5 - highest, 1 - lowest rating: ");
@@ -54,8 +54,19 @@ public class VoteRecipe {
                     }else {
                         System.out.println("Please consider voting values (1 - 5)");
                     }
+
                 }
-            }
+
+              }
+        }
+
+        public static double averageVote (){
+        int sum = 0;
+        double averageVote = 0;
+        int timesVoted = 0;
+
+        averageVote = sum/timesVoted;
+        return averageVote;
         }
     }
 

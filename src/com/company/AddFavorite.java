@@ -12,7 +12,7 @@ public class AddFavorite {
         int i = 0;
         for (Recipe s : allRecipe) {
             i++;
-            System.out.println(i + "." + s.name);
+            System.out.println(i + " - " + s.name);
         }
 
         System.out.println("Choose which recipe You would like to add to favorite?");

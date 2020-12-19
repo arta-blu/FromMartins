@@ -18,7 +18,7 @@ public class Main {
                 "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
                 "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
                 "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
-                "to serve", 10);
+                "to serve", 10, new int[]{1,2,5});
 
         Recipe recipe2 = new Recipe("Sweet Potato & Beetroot Crisps", new String[]{"2 sweet potatoes", "2 beetroots",
                 "1 garlic clove, minced", "1 tsp very finely minced fresh rosemary leaves", "2 tsp salt",  "2.5L vegetable oil"},
@@ -34,20 +34,20 @@ public class Main {
                         "Continue with the remaining sweet potatoes. Transfer to a serving plate.\n" +
                         "Next, fry 1/4 of the beetroots. Let fry until curled at the edges and most of the bubbling has subsided, " +
                         "about 3 to 4 minutes. Transfer the beets to another kitchen paper-lined baking tray and sprinkle with salt mixture." +
-                        " Continue with the remaining beetroots. Let cool and transfer to a serving plate.\n", 40);
+                        " Continue with the remaining beetroots. Let cool and transfer to a serving plate.\n", 40,new int[]{4,4,5});
 
         Recipe recipe3 = new Recipe("Caprese salad or tomatoes with mozzarella", new String[]{"3 mozzarella cheese balls",
                 "3 tomatoes", "1 handful of fresh basil leaves", "Olive oil", "1 tbsp. balsamic (if desired)", "salt", "pepper "},
                 "Tip: Mozzarella and tomato ratio 1: 1. If 2 mozzarella balls, then 2 tomatoes.\n" +
                         "Cut tomatoes and mozzarella into slices, arrange on a plate alternately. Pour with olive oil and balsamic " +
-                        "vinegar, add a little salt, pepper, and decorate with basil leaves.", 5);
+                        "vinegar, add a little salt, pepper, and decorate with basil leaves.", 5, new int[]{5,4,5});
 
         Recipe recipe4 = new Recipe("Chocolate chia pudding", new String[]{"60g chia seeds", "400ml unsweetened almond " +
                 "milk or hazelnut milk", "3 tbsp cacao powder", "2 tbsp maple syrup", "½ tsp vanilla extract", "cacao nibs , " +
                 "mixed", "frozen berries"}, "Put all the ingredients in a large bowl with a generous pinch of sea salt " +
                 "and whisk to combine. Cover with cling film then leave to thicken in the fridge for at least 4 hours, or overnight. " +
                 "Spoon the pudding into four glasses, then top with the frozen berries and cacao nibs.\n",
-                245);
+                245, new int[]{4,3,5});
 
         ArrayList<Recipe> allRecipe = new ArrayList<Recipe>();
 
@@ -90,7 +90,7 @@ public class Main {
                 "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
                 "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
                 "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
-                "to serve", 10, 165);
+                "to serve", 10, 165, new int[]{2,4,5});
 
 
         //System.out.println(DefaultRecipes.defaultRecipe());
@@ -138,7 +138,7 @@ public class Main {
         String answer = input.nextLine();
 
         if (answer.equalsIgnoreCase("sweet")){
-            Recipe recipeFromUser = new Recipe(null, null, null, 0);
+            Recipe recipeFromUser = new Recipe(null, null, null, 0,null);
             recipeFromUser.recipeInput();
 
             System.out.println("Do you want to add calories? (1- yes, 0 - no)");
@@ -173,7 +173,7 @@ public class Main {
 
 
         }else if (answer.equalsIgnoreCase("healthy")){
-            Recipe recipeFromUser = new Recipe(null, null, null, 0);
+            Recipe recipeFromUser = new Recipe(null, null, null, 0,null);
             recipeFromUser.recipeInput();
 
             Healthy.isRecipeVegan();

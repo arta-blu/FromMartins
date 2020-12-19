@@ -9,19 +9,41 @@ public class Recipe {
     public String [] ingredients;
     public String description;
     public int cookingTime;
+    public int[] userVote;
+
+
+    public Recipe(int[] userVote) {
+        this.userVote = userVote;
+    }
+
+    public int[] getUserVote() {
+        return userVote;
+    }
+
+    public void setUserVote(int[] userVote) {
+        this.userVote = userVote;
+    }
 
 
 
-    public Recipe(String name, String[] ingredients, String description, int cookingTime) {
+    public Recipe (String name, String[] ingredients, String description, int cookingTime, int[] userVote) {
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
         this.cookingTime = cookingTime;
+        this.userVote = userVote;
     }
+
+
+
 
     public String getName() {
         return name;
     }
+
+
+
+
 
     public void setName(String name) {
         this.name = name;
@@ -112,11 +134,15 @@ public class Recipe {
         } else {
             System.out.println("Cooking time " + cookingTime + " min.");
         }
-        //System.out.println("Cooking time: " + this.cookingTime);
+
+        int[] average = this.userVote;
+        double sum = 0;
+        for (int i = 0; i < average.length; i++) {
+            sum = sum+average[i];
+        }
+        double avVote = sum/(average.length);
+        System.out.format("The average vote for this recipe is: %.2f", avVote);
     }
-
-
-
 
 
     public static void  searchForRecipe() {
