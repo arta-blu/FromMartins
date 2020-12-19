@@ -6,7 +6,7 @@ public class Healthy extends Recipe {
 
     private boolean isVegan;
 
-    public Healthy(String name, String[] ingredients, String description, int cookingTime, boolean isVegan, int[]userVote) {
+    public Healthy(String name, String[] ingredients, String description, int cookingTime, boolean isVegan, double[]userVote) {
         super(name, ingredients, description, cookingTime, userVote);
         this.isVegan = isVegan;
     }

@@ -36,39 +36,41 @@ public class VoteRecipe {
                     System.out.print("Please vote with: 5 - highest, 1 - lowest rating: ");
                     int vote = input.nextInt();
 
+                    double[] average = s.userVote;
+                    double sum = 0;
+                    for (int j = 0; j < average.length; j++) {
+                        sum = sum+average[j];
+                    }
+                    double avVote = Math.round((sum/(average.length))*100.00)/100.00;
+                    double sum2 = Math.round(((vote + avVote)/2) * 100.00) / 100.00;
+                    String av1 = "The average vote for this recipe is: ";
+                    String av2 = ", and you have added ";
+                    String av3 = ", so the average vote is: ";
+
+                    System.out.print("Thank you for your vote! Recipe: " + s.name + " gets rating: ");
+
                     if (vote == 1) {
-                        System.out.println("Thank you for your vote! Recipe: " + s.name + " gets rating: \u2605 \u2606 \u2606 \u2606 \u2606!");
+                        System.out.println(" \u2605 \u2606 \u2606 \u2606 \u2606 ! \n" + av1 + avVote + av2 + vote + av3 + sum2);
                         break;
                     } else if (vote == 2) {
-                        System.out.println("Thank you for your vote! Recipe: " + s.name + " gets rating: \u2605 \u2605 \u2606 \u2606 \u2606 !");
+                        System.out.println(" \u2605 \u2605 \u2606 \u2606 \u2606 !\n" + av1 + avVote + av2 + vote + av3 + sum2) ;
                         break;
                     } else if (vote == 3) {
-                        System.out.println("Thank you for your vote! Recipe: " + s.name + " gets rating: \u2605 \u2605 \u2605 \u2606 \u2606 !");
+                        System.out.println(" \u2605 \u2605 \u2605 \u2606 \u2606 !\n" + av1 + avVote + av2 + vote + av3 + sum2) ;
                         break;
                     } else if (vote == 4) {
-                        System.out.println("Thank you for your vote! Recipe: " + s.name + " gets rating: \u2605 \u2605 \u2605 \u2605 \u2606 !");
+                        System.out.println(" \u2605 \u2605 \u2605 \u2605 \u2606 \n" + av1 + avVote + av2 + vote + av3 + sum2) ;
                         break;
                     } else if (vote == 5) {
-                        System.out.println("Thank you for your vote! Recipe: " + s.name + " gets rating: \u2605 \u2605 \u2605 \u2605 \u2605 !");
+                        System.out.println(" \u2605 \u2605 \u2605 \u2605 \u2605 \n" + av1 + avVote + av2 + vote + av3 + sum2) ;
                         System.out.println();
                     }else {
                         System.out.println("Please consider voting values (1 - 5)");
                     }
-
                 }
-
-              }
-        }
-
-        public static double averageVote (){
-        int sum = 0;
-        double averageVote = 0;
-        int timesVoted = 0;
-
-        averageVote = sum/timesVoted;
-        return averageVote;
         }
     }
+}
 
 
 

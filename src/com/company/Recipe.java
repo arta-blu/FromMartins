@@ -9,24 +9,24 @@ public class Recipe {
     public String [] ingredients;
     public String description;
     public int cookingTime;
-    public int[] userVote;
+    public double[] userVote;
 
 
-    public Recipe(int[] userVote) {
+    public Recipe(double[] userVote) {
         this.userVote = userVote;
     }
 
-    public int[] getUserVote() {
+    public double[] getUserVote() {
         return userVote;
     }
 
-    public void setUserVote(int[] userVote) {
+    public void setUserVote(double[] userVote) {
         this.userVote = userVote;
     }
 
 
 
-    public Recipe (String name, String[] ingredients, String description, int cookingTime, int[] userVote) {
+    public Recipe (String name, String[] ingredients, String description, int cookingTime, double[] userVote) {
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
@@ -73,7 +73,7 @@ public class Recipe {
         this.cookingTime = cookingTime;
     }
 
-    public void recipeInput(){
+    public void recipeInput() {
 
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter recipe name");
@@ -81,7 +81,7 @@ public class Recipe {
 
         System.out.println("Please enter how many ingredients do you have");
         int numberOfIngredients;
-        while(true) {
+        while (true) {
             numberOfIngredients = input.nextInt();
             if (numberOfIngredients <= 0) {
                 System.out.println("The count of ingredients must be at least 1: ");
@@ -91,14 +91,14 @@ public class Recipe {
         }
 
         System.out.println("Please enter " + numberOfIngredients + " ingredients");
-        String[] array = new String [numberOfIngredients];
+        String[] array = new String[numberOfIngredients];
         array[0] = input.nextLine();
         for (int i = 0; i < array.length; i++) { //reading array
             array[i] = input.nextLine();
         }
         String separator = "";
         System.out.println("ingredients:  ");
-        for (String i : array){ // for printing array
+        for (String i : array) { // for printing array
             System.out.print(separator + i);
             separator = ", ";
         }
@@ -110,13 +110,19 @@ public class Recipe {
 
         System.out.println("Please indicate cooking time (minutes): ");
         int cookingTime;
-        while(true) {
+        while (true) {
             cookingTime = input.nextInt();
             if (cookingTime <= 0) {
                 System.out.println("The cooking time must be at least 1 minute. Please indicate cooking time (minutes): ");
             } else break;
         }
         setCookingTime(cookingTime);
+
+
+        System.out.println("Vote how is your family liking your recipe? 5 - they like it a lot, 1 - no that much. :(");
+        double[] array2 = new double [1];
+        array2[0] = input.nextDouble();
+        setUserVote(array2);
     }
 
     public void printUserRecipe(){
@@ -135,13 +141,14 @@ public class Recipe {
             System.out.println("Cooking time " + cookingTime + " min.");
         }
 
-        int[] average = this.userVote;
+
+        double[] average = this.userVote;
         double sum = 0;
         for (int i = 0; i < average.length; i++) {
             sum = sum+average[i];
         }
-        double avVote = sum/(average.length);
-        System.out.format("The average vote for this recipe is: %.2f", avVote);
+        double avVote = (double)Math.round((sum/(average.length))*100.00)/100.00;
+        System.out.println("The average vote for this recipe is: " + avVote);
     }
 
 
@@ -178,7 +185,7 @@ public class Recipe {
 
     public void changeRecipe() {
         Scanner input = new Scanner(System.in);
-        System.out.println("To change name press - 1, to change ingredients press - 2. to change description press - 3))");
+        System.out.println("To change name press - 1, to change ingredients press - 2, to change description press - 3, to change rating press - 4");
         int choice = input.nextInt();
         input.nextLine();
 
@@ -191,6 +198,9 @@ public class Recipe {
                 break;
             case 3:
                 changeDescription();
+                break;
+            case 4:
+                changeVote();
                 break;
         }
     }
@@ -244,7 +254,14 @@ public class Recipe {
         System.out.println("The new description of recipe is: " + this.description);
     }
 
-
+    private void changeVote() {
+       // System.out.println("You told your family rated your recipe with " + this.userVote); When changing rating is giving answer: [D@2e0fa5d3
+        System.out.println("Since you typed it wrong, please provide the new rating: ");
+        Scanner scanner = new Scanner(System.in);
+        double[] array2 = new double[1];
+        array2[0] = scanner.nextDouble();
+        setUserVote(array2);
+    }
 }
 
 

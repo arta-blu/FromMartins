@@ -8,7 +8,7 @@ public class Sweet extends Recipe {
     private int calories;
 
 
-    public Sweet(String name, String[] ingredients, String description, int cookingTime, int calories, int[] userVote) {
+    public Sweet(String name, String[] ingredients, String description, int cookingTime, int calories, double[] userVote) {
         super(name, ingredients, description, cookingTime, userVote);
         this.calories = calories;
     }
