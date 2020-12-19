@@ -15,27 +15,22 @@ public class AddFavorite {
             System.out.println(i + "." + s.name);
         }
 
-
-
         System.out.println("Choose which recipe You would like to add to favorite?");
 
         Scanner input = new Scanner(System.in);
         String clientChoice = input.nextLine();
-
         int number = 0;
-
         for (Recipe s : allRecipe) {
-
             number++;
-
             if ((clientChoice.equalsIgnoreCase(s.name)) || (clientChoice.equals(Integer.toString(number)))) {
                 System.out.println("You choose to vote for: " + number + " " + s.name);
                 System.out.println("Recipe added to favorite \u2661 ");
 
+                break;
+            } //else {System.out.println("Please choose a recipe from list");}
 
-            } else {System.out.println("Please choose a recipe from list");}
-            break;
         }
+
 
 
     }
