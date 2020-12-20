@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.*;
 
+import static com.company.Sweet.*;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -47,12 +49,54 @@ public class Main {
                 "Spoon the pudding into four glasses, then top with the frozen berries and cacao nibs.\n",
                 245, new double[]{4,3,5});
 
+        Recipe recipe5 = new Recipe("Vegan tomato soup", new String[]{"2 tablespoons olive oil", "1 onion", "4 cloves garlic",
+                " 4 tomatoes","3 cups cherry tomatoes", " ¾ cup vegetable broth", "2 bay leaves", "2 sprigs fresh basil"},
+                "Heat olive oil in a pot over low heat and cook onion until soft and translucent. " +
+                "Add garlic and cook until fragrant, about 1 minute. Increase heat to medium, add all tomatoes, " +
+                "and cook until they start to break down, about 5 minutes. Stir occasionally. Add vegetable broth, bay leaves, and 1 sprig of basil." +
+                " Bring to a boil, reduce heat, and simmer until tomatoes have broken down and soup starts to thicken, about 30 minute.\n" +
+                "Remove soup from heat and cool slightly. Remove bay leaves and basil.\n" +
+                "Puree tomato soup with an immersion blender until smooth.", 65, new double[]{2,3,3,5});
+
+        Recipe recipe6 = new Recipe("Chicken fillets with red pepper", new String[]{"4 skinless and boneless chicken fillets",
+                "salt, spice mixture of your choice","1 red sweet pepper", " garlic clove", "a small bunch of parsley greens", "2 tbs of olive oil"},
+                "Chicken fillets rubbed with a mixture of salt and spices, arranged in a mold. Blend sliced peppers with parsley and garlic," +
+                        " add olive oil. Spread the fillets with the resulting mixture, pour a little water into the mold," +
+                        " bake in the oven at 200 degrees for about 25 minutes. To make the chicken breast a little juicier," +
+                        " you can pour a little sour cream on it. Serve with pasta or potatoes and fresh vegetable salad.\n" ,
+                30, new double[]{5,4,5,5});
+
+        Recipe recipe7= new Recipe("Curd cream with canned peach puree", new String[]{"200 ml cream", "400 g skimmed milk curd",
+                "4 tbsp Sugar","400 g canned peaches","to taste Cinnamon"},
+                "Pour sugar through the mesh of the mashed cottage cheese and stir until the sugar has melted." +
+                        " Whipped cream in the wily foam and mixed into sweet curd. " +
+                        "Canned peaches are blended in a homogeneous mass, adding a pinch of cinnamon at will. " +
+                        "Put in dessert dishes, rounds of cream and peach puree." ,
+                20, new double[]{3,5,4,4});
+
+        Recipe recipe8= new Recipe("Muffins", new String[]{"1,5 cups all-purpose flour, 1/2 cup sugar", "2 teaspoons baking powder",
+                " 1/2 teaspoon salt, 1 large egg", "1/2 cup milk", "1/4 cup vegetable oil"},
+                "Stir together first 4 ingredients in a large bowl; make a well in center of mixture.\n" +
+                        "Stir together egg, milk, and oil until blended. Add to dry ingredients, stirring just until\n" +
+                        "moistened. Spoon batter into lightly greased muffin pans, filling two-thirds full.\n" +
+                        "Bake at 400° for 18 to 20 minutes. Remove from pans immediately\n" ,
+                35, new double[]{2,2,4});
+
+
+
+
+
+
         ArrayList<Recipe> allRecipe = new ArrayList<Recipe>();
 
         allRecipe.add(recipe1);
         allRecipe.add(recipe2);
         allRecipe.add(recipe3);
         allRecipe.add(recipe4);
+        allRecipe.add(recipe5);
+        allRecipe.add(recipe6);
+        allRecipe.add(recipe7);
+        allRecipe.add(recipe8);
 
 
         /*
@@ -84,13 +128,6 @@ public class Main {
 */
         ///recipe1.printUserRecipe();
 
-        Sweet sweetRecipe1 = new Sweet("Couscous salad", new String[]{"100 g couscous", "200ml hot low salt vegetable stock", "2 spring onions", "1 red pepper", "½ cucumber", "50 g fetta cheese", "2tbsp pesto", "2tbsp pine nuts"}, "Tip the couscous into a large bowl and pour over the stock." +
-                "Cover, then leave for 10 mins until fluffy and all the stock has been absorbed." +
-                "Meanwhile, slice the onions and pepper, and dice the cucumber. Add these to the" +
-                "couscous, fork through the pesto, crumble in the feta, then sprinkle over pine nuts" +
-                "to serve", 10, 165, new double[]{2,4,5});
-
-
 
         System.out.print("Hello! \u263a Welcome to COOK BOOK! Enjoy Your experience! \u2615");
         Scanner input = new Scanner(System.in);
@@ -100,7 +137,7 @@ public class Main {
         boolean quit = false;
 
         while (!quit) {
-            System.out.print("Please select Your choice: ");
+            System.out.print("Please select Your choice from 0 to 5: ");
             int choice = input.nextInt();
             input.nextLine();
 

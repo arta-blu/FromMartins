@@ -149,6 +149,7 @@ public class Recipe {
         }
         double avVote = (double)Math.round((sum/(average.length))*100.00)/100.00;
         System.out.println("The average vote for this recipe is: " + avVote);
+
     }
 
 

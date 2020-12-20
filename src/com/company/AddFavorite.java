@@ -27,7 +27,7 @@ public class AddFavorite {
                 System.out.println("Recipe added to favorite \u2661 ");
 
                 break;
-            } //else {System.out.println("Please choose a recipe from list");}
+            }
 
         }
 
