@@ -14,11 +14,6 @@ public class Sweet extends Recipe {
         super(name, ingredients, description, cookingTime, userVote);
         this.calories = calories;
     }
-    public Sweet(int calories) {
-        super(null, null, null, 0, null);
-        System.out.println("This recipe has: " + calories + " calories");
-        this.calories = calories;
-    }
 
     public int getCalories() {
         return calories;
