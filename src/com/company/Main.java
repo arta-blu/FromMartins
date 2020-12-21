@@ -1,8 +1,7 @@
 package com.company;
 
-import java.util.*;
-
-import static com.company.Sweet.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -173,6 +172,9 @@ public class Main {
                 } else {
                     System.out.println("Your recipe is  submitted: ");
                     recipeFromUser.printUserRecipe();
+
+                    if (Sweet.calories >0){
+                        System.out.println("This recipe has : " + Sweet.calories + " calories.");}
                     System.out.println();
                     break;
                 }
