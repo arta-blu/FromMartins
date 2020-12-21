@@ -9,8 +9,10 @@ public class Main {
     public static void main(String[] args) {
 
         String str = "\u2606"; //star unicode
+        System.out.println();
 
         System.out.println("                      "+ str+str+str);
+        System.out.println();
 
         Recipe recipe1 = new Recipe("Couscous", new String[]{"100 g couscous", "200ml hot low salt vegetable stock",
                 "2 spring onions", "1 red pepper", "½ cucumber", "50 g fetta cheese", "2tbsp pesto", "2tbsp pine nuts"},
@@ -79,7 +81,7 @@ public class Main {
                 "Stir together first 4 ingredients in a large bowl; make a well in center of mixture.\n" +
                         "Stir together egg, milk, and oil until blended. Add to dry ingredients, stirring just until\n" +
                         "moistened. Spoon batter into lightly greased muffin pans, filling two-thirds full.\n" +
-                        "Bake at 400° for 18 to 20 minutes. Remove from pans immediately\n" ,
+                        "Bake at 400° for 18 to 20 minutes. Remove from pans immediately." ,
                 35, new double[]{2,2,4});
 
 
@@ -98,35 +100,6 @@ public class Main {
         allRecipe.add(recipe7);
         allRecipe.add(recipe8);
 
-
-        /*
-        for (Recipe s : allRecipe) {
-            System.out.println("Recipe name: " + s.name + ".\n" +
-                    "Ingredients: " + Arrays.toString(s.ingredients) + ".\n"
-                    + "Instructions: " + s.description + ".\n" + "Cooking time: " + s.cookingTime + " min.");
-            System.out.println();
-        }
-        */
-
-        /*
-
-        System.out.println("please enter name you want to search:");
-        Scanner search = new Scanner(System.in);
-        String userInput = search.nextLine();
-        boolean isFound = false;
-        for (Recipe s : allRecipe) {
-            if (userInput.equalsIgnoreCase(s.name)) {
-                System.out.println("recipe founded");
-                s.printUserRecipe();
-                System.out.println();
-                isFound = true;
-            } else isFound = false;
-        }
-        if (!isFound) {
-            System.out.println(userInput + " not found");
-        }
-*/
-        ///recipe1.printUserRecipe();
 
 
         System.out.print("Hello! \u263a Welcome to COOK BOOK! Enjoy Your experience! \u2615");
@@ -159,6 +132,7 @@ public class Main {
                     break;
                 case 5:
                     quit = true;
+                    System.out.println("               "+ str+str+str);
                     break;
             }
         }
@@ -182,8 +156,8 @@ public class Main {
             } else {
                 System.out.println("wrong answer");      // WHILE!!!!
             }
-
             recipeFromUser.printUserRecipe();
+
 
             System.out.println("is it correct? (1 - yes, 0 - no)");
             int correct;
@@ -199,6 +173,7 @@ public class Main {
                 } else {
                     System.out.println("Your recipe is  submitted: ");
                     recipeFromUser.printUserRecipe();
+                    System.out.println();
                     break;
                 }
             }
@@ -225,6 +200,7 @@ public class Main {
                 } else {
                     System.out.println("Your recipe is  submitted: ");
                     recipeFromUser.printUserRecipe();
+                    System.out.println();
                     break;
                 }
             }
@@ -244,6 +220,7 @@ public class Main {
             System.out.println("\t 3 - To vote for recipe.");
             System.out.println("\t 4 - To add to favorites.");
             System.out.println("\t 5 - To quit the application.");
+        System.out.println();
     }
 }
 

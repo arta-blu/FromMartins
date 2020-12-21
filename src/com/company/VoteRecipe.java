@@ -42,27 +42,46 @@ public class VoteRecipe {
                         sum = sum+average[j];
                     }
                     double avVote = Math.round((sum/(average.length))*100.00)/100.00;
-                    double sum2 = Math.round(((vote + avVote)/2) * 100.00) / 100.00;
+                    double sum2 = Math.round(((vote + sum)/(average.length+1)) * 100.00) / 100.00;
                     String av1 = "The average vote for this recipe is: ";
                     String av2 = ", and you have added ";
                     String av3 = ", so the average vote is: ";
 
                     System.out.print("Thank you for your vote! Recipe: " + s.name + " gets rating: ");
 
+                    String stars = "";
+                    if(sum2 <= 1.4){
+                        stars = "  \u2605 \u2606 \u2606 \u2606 \u2606 ! \n";
+                    }else if(sum2 >= 1.5 && sum2 <= 2.4 ){
+                        stars = "  \u2605 \u2605 \u2606 \u2606 \u2606 !\n";
+                    }
+                    else if(sum2 >= 2.5 && sum2 <= 3.4){
+                        stars = "  \u2605 \u2605 \u2605 \u2606 \u2606 !\n";
+                    }
+                    else if(sum2 >= 3.5 && sum2 <= 4.4){
+                        stars = "  \u2605 \u2605 \u2605 \u2605 \u2606 \n";
+                    }
+                    else if(sum2 >= 4.5 && sum<= 5){
+                        stars = "  \u2605 \u2605 \u2605 \u2605 \u2605 \n";
+                    }
+
+
+
+
                     if (vote == 1) {
-                        System.out.println(" \u2605 \u2606 \u2606 \u2606 \u2606 ! \n" + av1 + avVote + av2 + vote + av3 + sum2);
+                        System.out.println(" \u2605 \u2606 \u2606 \u2606 \u2606 ! \n" + av1 + avVote + av2 + vote + av3 + sum2 + stars);
                         break;
                     } else if (vote == 2) {
-                        System.out.println(" \u2605 \u2605 \u2606 \u2606 \u2606 !\n" + av1 + avVote + av2 + vote + av3 + sum2) ;
+                        System.out.println(" \u2605 \u2605 \u2606 \u2606 \u2606 !\n" + av1 + avVote + av2 + vote + av3 + sum2 + stars);
                         break;
                     } else if (vote == 3) {
-                        System.out.println(" \u2605 \u2605 \u2605 \u2606 \u2606 !\n" + av1 + avVote + av2 + vote + av3 + sum2) ;
+                        System.out.println(" \u2605 \u2605 \u2605 \u2606 \u2606 !\n" + av1 + avVote + av2 + vote + av3 + sum2 + stars);
                         break;
                     } else if (vote == 4) {
-                        System.out.println(" \u2605 \u2605 \u2605 \u2605 \u2606 \n" + av1 + avVote + av2 + vote + av3 + sum2) ;
+                        System.out.println(" \u2605 \u2605 \u2605 \u2605 \u2606 \n" + av1 + avVote + av2 + vote + av3 + sum2 + stars);
                         break;
                     } else if (vote == 5) {
-                        System.out.println(" \u2605 \u2605 \u2605 \u2605 \u2605 \n" + av1 + avVote + av2 + vote + av3 + sum2) ;
+                        System.out.println(" \u2605 \u2605 \u2605 \u2605 \u2605 \n" + av1 + avVote + av2 + vote + av3 + sum2 + stars);
                         System.out.println();
                     }else {
                         System.out.println("Please consider voting values (1 - 5)");

@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Sweet extends Recipe {
@@ -32,8 +33,6 @@ public class Sweet extends Recipe {
             } else break;
         }
         System.out.println("Your recipe has " + caloriesCount + " calories");
-
-        //portions count
     }
 
 }

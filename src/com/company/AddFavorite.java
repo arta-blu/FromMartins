@@ -25,14 +25,11 @@ public class AddFavorite {
             if ((clientChoice.equalsIgnoreCase(s.name)) || (clientChoice.equals(Integer.toString(number)))) {
                 System.out.println("You choose to vote for: " + number + " " + s.name);
                 System.out.println("Recipe added to favorite \u2661 ");
+                System.out.println();
 
                 break;
             }
-
         }
-
-
-
     }
 }
 

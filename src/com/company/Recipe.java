@@ -173,12 +173,6 @@ public class Recipe {
 
     static void searchByName() {
 
-
-
-
-   //     if (userInput.equalsIgnoreCase(this.name)) {
-    //        System.out.println("recipe founded");
-    //    } else System.out.println("not found");
     }
 
 
