@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class Healthy extends Recipe {
 
-    private boolean isVegan;
+    public static boolean isVegan;
 
     public Healthy(String name, String[] ingredients, String description, int cookingTime, boolean isVegan, double[]userVote) {
         super(name, ingredients, description, cookingTime, userVote);
-        this.isVegan = isVegan;
+        Healthy.isVegan = isVegan;
     }
 
     public boolean isVegan() {
@@ -18,7 +18,6 @@ public class Healthy extends Recipe {
     public void setVegan(boolean vegan) {
         isVegan = vegan;
     }
-
 
     public static void isRecipeVegan() {
         System.out.println("Does your food contains meat, poultry, fish, dairy, eggs or foods made by bees? (1 - yes, 0 - no)");
@@ -32,9 +31,11 @@ public class Healthy extends Recipe {
             } else break;
         }
         if (answer == 1) {
+            isVegan = false;
             System.out.println("Your recipe is not vegan");
         } else {
             System.out.println("Your recipe is  vegan");
+            isVegan = true;
         }
 
     }

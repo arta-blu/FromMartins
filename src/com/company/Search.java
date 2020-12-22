@@ -22,7 +22,6 @@ public class Search {
                 searchByIngredients(allRecipe);
                 break;
         }
-
     }
 
     private static void searchByIngredients(ArrayList<Recipe> allRecipe) {
@@ -49,29 +48,28 @@ public class Search {
             System.out.println();
         }
 
-
         if (!isFound) {
             System.out.println(userInput + " not found");
         }
     }
 
-        private static void searchByName (ArrayList < Recipe > allRecipe) {
-            System.out.println("please enter name you want to search:");
-            Scanner search = new Scanner(System.in);
-            String userInput = search.nextLine();
-            boolean isFound = false;
-            for (Recipe s : allRecipe) {
-                if (userInput.equalsIgnoreCase(s.name)) {
-                    System.out.println("recipe found");
-                    s.printUserRecipe();
-                    System.out.println();
-                    isFound = true;
-                }
-            }
-            if (!isFound) {
-                System.out.println(userInput + " not found");
+    private static void searchByName(ArrayList<Recipe> allRecipe) {
+        System.out.println("please enter name you want to search:");
+        Scanner search = new Scanner(System.in);
+        String userInput = search.nextLine();
+        boolean isFound = false;
+        for (Recipe s : allRecipe) {
+            if (userInput.equalsIgnoreCase(s.name)) {
+                System.out.println("recipe found");
+                s.printUserRecipe();
+                System.out.println();
+                isFound = true;
             }
         }
-
+        if (!isFound) {
+            System.out.println(userInput + " not found");
+        }
     }
+
+}
 
